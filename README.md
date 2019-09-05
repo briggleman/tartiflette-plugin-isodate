@@ -1,6 +1,8 @@
 # tartiflette-plugin-isodate
 
-[![Build Status](https://travis-ci.org/briggleman/tartiflette-plugin-isodate.svg?branch=master)](https://travis-ci.org/briggleman/tartiflette-plugin-isodate)
+[<figure><img src="https://buddy.works" alt="Automated by Buddy](https://assets.buddy.works/automated-dark.svg)" /><figcaption>Automated by Buddy](https://assets.buddy.works/automated-dark.svg)</figcaption></figure>
+
+[![buddy pipeline](https://app.buddy.works/benriggleman/tartiflette-plugin-isodate/pipelines/pipeline/208276/badge.svg?token=ff05a3fb6bb08b48350b4170e0c447aa3ccc198abbddd48c222205c3c61a7cff "buddy pipeline")](https://app.buddy.works/benriggleman/tartiflette-plugin-isodate/pipelines/pipeline/208276)
 
 ISO Date Format Directive for Tartiflette
 
