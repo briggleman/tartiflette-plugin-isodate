@@ -44,6 +44,8 @@ The `@isoDate` also takes the following optional arguments:
 
 [*@isoDate(microseconds: false)*](#usage-options-microseconds)
 
+Returns date and time _without_ microseconds.
+
 ```graphql
 type Example {
     createdAt: String @isoDate(microseconds: false)
@@ -63,6 +65,8 @@ Querying `createdAt` would return the following:
 ```
 
 [*@isoDate(timezone: false)*](#usage-options-timezone)
+
+Returns date and time _without_  timezone.
 
 ```graphql
 type Example {
