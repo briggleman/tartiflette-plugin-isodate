@@ -3,14 +3,19 @@
 ISO Date Format Directive for Tartiflette
 
 ## TOC
-- Overview
-- Use
+- [Overview](#overview)
+- [Usage](#usage)
+    - [Options](#usage-options)
+        - [microseconds](#usage-options-microseconds)
+        - [timezone](#usage-options-timezone)
+        - [utc](#usage-options-utc)
 
-## Overview
+
+## [Overview](#overview)
 
 The `tartiflette-plugin-isodate` plugin adds an `@isoDate` directive to [tartiflette](https://github.com/tartiflette/tartiflette).
 
-## Use
+## [Usage](#usage)
 
 ```graphql
 type Example {
@@ -30,9 +35,12 @@ Querying `createdAt` would return the following:
 }
 ```
 
+
+### [Options](#usage-options)
+
 The `@isoDate` also takes the following optional arguments:
 
-- microseconds: Boolean = true
+[*@isoDate(microseconds: false)*](#usage-options-microseconds)
 
 ```graphql
 type Example {
@@ -52,8 +60,7 @@ Querying `createdAt` would return the following:
 }
 ```
 
-
-- timezone: Boolean = true
+[*@isoDate(timezone: false)*](#usage-options-timezone)
 
 ```graphql
 type Example {
@@ -73,7 +80,7 @@ Querying `createdAt` would return the following:
 }
 ```
 
-- utc: Boolean = true
+[*isoDate(utc: false)*](#usage-options-utc)
 
 ```graphql
 type Example {
@@ -100,11 +107,13 @@ For example settings `microseconds` to `false` and `timezone` to `true` would yi
 
 Possible combinations:
 
-- microsecond = `true` and timezone = `true`: "2019-09-04T13:49:12.585158+00:00"
-- microsecond = `true` and timezone = `false`: "2019-09-04T13:52:43.476260"
-- microsecond = `false` and timezone = `true`: "2019-09-04T13:50:02+00:00"
-- microsecond = `false` and timezone = `false`: "2019-09-04T13:53:31"
+- `@isoDate` >> "2019-09-04T13:49:12.585158+00:00"
+- `@isoDate(timezone: false)` >> "2019-09-04T13:52:43.476260"
+- `@isoDate(microseconds: false)` >> "2019-09-04T13:50:02+00:00"
+- `@isoDate(microseconds: false, timezone: false)` >> "2019-09-04T13:53:31"
 
-The time can also be set to the `local` time by setting `utc` to `false`.
+The time can also be set to the `local` time by setting `utc` to `false`.  
+
+`@isoDate(utc: false)` >> "2019-09-04T09:50:02+00:00"
 
 Using the `@isoDate` directive will override any value sent.
