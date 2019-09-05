@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "isodate-tartiflette-plugin"
+name = "tartiflette-plugin-isodate"
 version = "0.1.0"
 description = "ISO Date Formatter for Tartiflette"
 authors = ["Ben Riggleman <ben.riggleman@gmail.com>"]
