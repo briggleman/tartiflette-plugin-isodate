@@ -1,6 +1,6 @@
 # tartiflette-plugin-isodate
 
-[<figure><img src="https://buddy.works" /><figcaption>Automated by Buddy](https://assets.buddy.works/automated-dark.svg)</figcaption></figure>
+<a href="https://buddy.works"><img src="https://assets.buddy.works/automated-dark.svg" alt="Buddy.Works logo."></img></a>
 
 [![buddy pipeline](https://app.buddy.works/benriggleman/tartiflette-plugin-isodate/pipelines/pipeline/208276/badge.svg?token=ff05a3fb6bb08b48350b4170e0c447aa3ccc198abbddd48c222205c3c61a7cff "buddy pipeline")](https://app.buddy.works/benriggleman/tartiflette-plugin-isodate/pipelines/pipeline/208276)
 
