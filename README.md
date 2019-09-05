@@ -42,7 +42,7 @@ Querying `createdAt` would return the following:
 
 The `@isoDate` also takes the following optional arguments:
 
-#### [*@isoDate(microseconds: false)*](#usage-options-microseconds)
+#### [@isoDate(microseconds: false)](#usage-options-microseconds)
 
 Returns date and time _without_ microseconds.
 
