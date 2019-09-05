@@ -1,9 +1,11 @@
+from unittest.mock import Mock
+
 import asyncio
+import datetime
 import pytest
 
-from unittest.mock import Mock
-from tartiflette import Resolver, create_engine
 from freezegun import freeze_time
+from tartiflette import Resolver, create_engine
 
 
 @freeze_time("2019-09-04T13:49:12.585158", tz_offset=0)
@@ -12,11 +14,11 @@ async def test_isodate_defaults():
     logger = Mock()
     logger.debug = Mock()
 
-    @Resolver("Query.createdAt", schema_name="test_isodate_defaults")
+    @Resolver("Query.createdAt", schema_name="test_isodate_defaults_utc")
     async def created_at_resolver(*_args, **_kwargs):
         return {}
 
-    @Resolver("ISODate.date", schema_name="test_isodate_defaults")
+    @Resolver("ISODate.date", schema_name="test_isodate_defaults_utc")
     async def created_at_date_resolver(*_args, **_kwargs):
         await asyncio.sleep(0.100)
         return "OVERWRITTEN"
@@ -36,7 +38,7 @@ async def test_isodate_defaults():
                 "config": {}
             }
         ],
-        schema_name="test_isodate_defaults",
+        schema_name="test_isodate_defaults_utc",
     )
     
     assert await engine.execute("query a { createdAt { date } } ") == {
@@ -50,11 +52,11 @@ async def test_isodate_no_microseconds():
     logger = Mock()
     logger.debug = Mock()
 
-    @Resolver("Query.createdAt", schema_name="test_isodate_no_microseconds")
+    @Resolver("Query.createdAt", schema_name="test_isodate_no_microseconds_utc")
     async def created_at_resolver(*_args, **_kwargs):
         return {}
 
-    @Resolver("ISODate.date", schema_name="test_isodate_no_microseconds")
+    @Resolver("ISODate.date", schema_name="test_isodate_no_microseconds_utc")
     async def created_at_date_resolver(*_args, **_kwargs):
         await asyncio.sleep(0.100)
         return "OVERWRITTEN"
@@ -74,7 +76,7 @@ async def test_isodate_no_microseconds():
                 "config": {},
             }
         ],
-        schema_name="test_isodate_no_microseconds",
+        schema_name="test_isodate_no_microseconds_utc",
     )
 
     assert await engine.execute("query a { createdAt { date } } ") == {
@@ -88,11 +90,11 @@ async def test_isodate_no_timezone():
     logger = Mock()
     logger.debug = Mock()
 
-    @Resolver("Query.createdAt", schema_name="test_isodate_no_timzone")
+    @Resolver("Query.createdAt", schema_name="test_isodate_no_timzone_utc")
     async def created_at_resolver(*_args, **_kwargs):
         return {}
 
-    @Resolver("ISODate.date", schema_name="test_isodate_no_timzone")
+    @Resolver("ISODate.date", schema_name="test_isodate_no_timzone_utc")
     async def created_at_date_resolver(*_args, **_kwargs):
         await asyncio.sleep(0.100)
         return "OVERWRITTEN"
@@ -112,7 +114,7 @@ async def test_isodate_no_timezone():
                 "config": {}
             }
         ],
-        schema_name="test_isodate_no_timzone",
+        schema_name="test_isodate_no_timzone_utc",
     )
     
     assert await engine.execute("query a { createdAt { date } } ") == {
@@ -126,11 +128,11 @@ async def test_isodate_no_microseconds_timezone():
     logger = Mock()
     logger.debug = Mock()
 
-    @Resolver("Query.createdAt", schema_name="test_isodate_no_microseconds_timezone")
+    @Resolver("Query.createdAt", schema_name="test_isodate_no_microseconds_timezone_utc")
     async def created_at_resolver(*_args, **_kwargs):
         return {}
 
-    @Resolver("ISODate.date", schema_name="test_isodate_no_microseconds_timezone")
+    @Resolver("ISODate.date", schema_name="test_isodate_no_microseconds_timezone_utc")
     async def created_at_date_resolver(*_args, **_kwargs):
         await asyncio.sleep(0.100)
         return "OVERWRITTEN"
@@ -150,7 +152,7 @@ async def test_isodate_no_microseconds_timezone():
                 "config": {},
             }
         ],
-        schema_name="test_isodate_no_microseconds_timezone",
+        schema_name="test_isodate_no_microseconds_timezone_utc",
     )
 
     assert await engine.execute("query a { createdAt { date } } ") == {
