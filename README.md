@@ -8,6 +8,7 @@ ISO Date Format Directive for Tartiflette
 
 ## TOC
 - [Overview](#overview)
+- [Installation](#install)
 - [Usage](#usage)
     - [Options](#usage-options)
         - [microseconds](#usage-options-microseconds)
@@ -18,6 +19,20 @@ ISO Date Format Directive for Tartiflette
 ## [Overview](#overview)
 
 The `tartiflette-plugin-isodate` plugin adds an `@isoDate` directive to [tartiflette](https://github.com/tartiflette/tartiflette).
+
+## [Installation](#install)
+
+To install with [poetry](https://poetry.eustace.io):
+
+```sh
+$ poetry add tartiflette-plugin-isodate
+```
+
+To install with pip:
+
+```sh
+$ pip install tartiflette-plugin-isodate
+```
 
 ## [Usage](#usage)
 
