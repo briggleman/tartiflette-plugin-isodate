@@ -66,7 +66,7 @@ Querying `createdAt` would return the following:
 
 [*@isoDate(timezone: false)*](#usage-options-timezone)
 
-Returns date and time _without_  timezone.
+Returns date and time _without_ timezone.
 
 ```graphql
 type Example {
@@ -87,6 +87,8 @@ Querying `createdAt` would return the following:
 ```
 
 [*isoDate(utc: false)*](#usage-options-utc)
+
+Returns date and time in the _local_ timezone.
 
 ```graphql
 type Example {
