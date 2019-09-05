@@ -1,5 +1,7 @@
 # tartiflette-plugin-isodate
 
+[![Build Status](https://travis-ci.org/briggleman/tartiflette-plugin-isodate.svg?branch=master)](https://travis-ci.org/briggleman/tartiflette-plugin-isodate)
+
 ISO Date Format Directive for Tartiflette
 
 ## TOC

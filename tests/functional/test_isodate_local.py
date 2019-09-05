@@ -1,4 +1,4 @@
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 import asyncio
 import datetime
@@ -8,9 +8,16 @@ from freezegun import freeze_time
 from tartiflette import Resolver, create_engine
 
 
+@pytest.fixture
+def mock_time_altzone(autouse=True):
+    with patch("tartiflette_plugin_isodate.time") as mocked:
+        mocked.altzone = 14400
+        yield mocked
+
+
 @freeze_time("2019-09-04T13:49:12.585158", tz_offset=-datetime.timedelta(hours=4))
 @pytest.mark.asyncio
-async def test_isodate_defaults():
+async def test_isodate_defaults(mock_time_altzone):
     logger = Mock()
     logger.debug = Mock()
 
@@ -48,7 +55,7 @@ async def test_isodate_defaults():
 
 @freeze_time("2019-09-04T13:49:12", tz_offset=-datetime.timedelta(hours=4))
 @pytest.mark.asyncio
-async def test_isodate_no_microseconds():
+async def test_isodate_no_microseconds(mock_time_altzone):
     logger = Mock()
     logger.debug = Mock()
 
