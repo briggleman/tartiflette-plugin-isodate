@@ -100,10 +100,10 @@ For example settings `microseconds` to `false` and `timezone` to `true` would yi
 
 Possible combinations:
 
-microsecond = `true` and timezone = `true`: "2019-09-04T13:49:12.585158+00:00"
-microsecond = `true` and timezone = `false`: "2019-09-04T13:52:43.476260"
-microsecond = `false` and timezone = `true`: "2019-09-04T13:50:02+00:00"
-microsecond = `false` and timezone = `false`: "2019-09-04T13:53:31"
+- microsecond = `true` and timezone = `true`: "2019-09-04T13:49:12.585158+00:00"
+- microsecond = `true` and timezone = `false`: "2019-09-04T13:52:43.476260"
+- microsecond = `false` and timezone = `true`: "2019-09-04T13:50:02+00:00"
+- microsecond = `false` and timezone = `false`: "2019-09-04T13:53:31"
 
 The time can also be set to the `local` time by setting `utc` to `false`.
 
