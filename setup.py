@@ -12,9 +12,10 @@ _TEST_REQUIRE = [
     "xenon==0.5.5",
     "black==18.9b0",
     "isort==4.3.4",
+    "freezegun==0.3.12",
 ]
 
-_VERSION = "0.0.1"
+_VERSION = "0.1.0"
 
 _PACKAGES = find_packages(exclude=["tests*"])
 
@@ -30,7 +31,7 @@ setup(
     description="ISO Date Format Directive for Tartiflette",
     long_description=_read_file("README.md"),
     long_description_content_type="text/markdown",
-    url="Url of the project if any",
+    url="https://github.com/briggleman/tartiflette-plugin-isodate",
     author="Ben Riggleman",
     author_email="ben.riggleman@gmail.com",
     license="MIT",
@@ -40,7 +41,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
-    keywords="api graphql protocol api tartiflette",
+    keywords="api graphql protocol api tartiflette iso8601 date datetime directive",
     packages=_PACKAGES,
     install_requires=["tartiflette>=0.12.5"],
     tests_require=_TEST_REQUIRE,
