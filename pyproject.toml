@@ -5,7 +5,7 @@ description = "ISO Date Formatter for Tartiflette"
 authors = ["Ben Riggleman <ben.riggleman@gmail.com>"]
 
 [tool.poetry.dependencies]
-python >= "^3.6"
+python = "^3.6"
 tartiflette = "^0.12.5"
 
 [tool.poetry.dev-dependencies]
