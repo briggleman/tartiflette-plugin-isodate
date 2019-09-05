@@ -42,7 +42,7 @@ Querying `createdAt` would return the following:
 
 The `@isoDate` also takes the following optional arguments:
 
-[*@isoDate(microseconds: false)*](#usage-options-microseconds)
+#### [*@isoDate(microseconds: false)*](#usage-options-microseconds)
 
 Returns date and time _without_ microseconds.
 
@@ -64,7 +64,7 @@ Querying `createdAt` would return the following:
 }
 ```
 
-[*@isoDate(timezone: false)*](#usage-options-timezone)
+#### [@isoDate(timezone: false)](#usage-options-timezone)
 
 Returns date and time _without_ timezone.
 
@@ -86,7 +86,7 @@ Querying `createdAt` would return the following:
 }
 ```
 
-[*isoDate(utc: false)*](#usage-options-utc)
+#### [@isoDate(utc: false)](#usage-options-utc)
 
 Returns date and time in the _local_ timezone.
 
