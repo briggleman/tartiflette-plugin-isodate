@@ -15,7 +15,7 @@ _TEST_REQUIRE = [
     "freezegun==0.3.12",
 ]
 
-_VERSION = "0.2.1"
+_VERSION = "0.2.2"
 
 _PACKAGES = find_packages(exclude=["tests*"])
 
