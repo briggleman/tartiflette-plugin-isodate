@@ -1,4 +1,4 @@
-# tartiflette-plugin-isodate
+# tartiflette-plugin-isodatenow
 
 <a href="https://buddy.works"><img src="https://assets.buddy.works/automated-dark.svg" alt="Buddy.Works logo."></img></a>
 
@@ -26,13 +26,13 @@ It is primarly intended for use in mutations as the directive overrides any valu
 To install with [poetry](https://poetry.eustace.io):
 
 ```sh
-$ poetry add tartiflette-plugin-isodate
+$ poetry add tartiflette-plugin-isodatenow
 ```
 
 To install with pip:
 
 ```sh
-$ pip install tartiflette-plugin-isodate
+$ pip install tartiflette-plugin-isodatenow
 ```
 
 ## [Usage](#usage)

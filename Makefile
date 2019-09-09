@@ -6,27 +6,27 @@ init:
 
 .PHONY: format-import
 format-import:
-	isort -rc tartiflette_plugin_isodate_tartiflette_plugin/. tests/. setup.py
+	isort -rc tartiflette_plugin_isodatenow/. tests/. setup.py
 
 .PHONY: format
 format: format-import
-	black -l 79 --py36 tartiflette_plugin_isodate_tartiflette_plugin tests setup.py
+	black -l 79 --py36 tartiflette_plugin_isodatenow tests setup.py
 
 .PHONY: check-import
 check-import:
-	isort --check-only -rc tartiflette_plugin_isodate_tartiflette_plugin/. tests/. setup.py
+	isort --check-only -rc tartiflette_plugin_isodatenow/. tests/. setup.py
 
 .PHONY: check-format
 check-format:
-	black -l 79 --py36 --check tartiflette_plugin_isodate_tartiflette_plugin tests setup.py
+	black -l 79 --py36 --check tartiflette_plugin_isodatenow tests setup.py
 
 .PHONY: style
 style: check-format check-import
-	pylint tartiflette_plugin_isodate_tartiflette_plugin --rcfile=pylintrc
+	pylint tartiflette_plugin_isodatenow --rcfile=pylintrc
 
 .PHONY: complexity
 complexity:
-	xenon --max-absolute B --max-modules B --max-average A tartiflette_plugin_isodate_tartiflette_plugin
+	xenon --max-absolute B --max-modules B --max-average A tartiflette_plugin_isodatenow
 
 .PHONY: test-unit
 test-unit: clean
