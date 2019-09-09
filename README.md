@@ -18,7 +18,8 @@ ISO Date Format Directive for Tartiflette
 
 ## [Overview](#overview)
 
-The `tartiflette-plugin-isodate` plugin adds an `@isoDate` directive to [tartiflette](https://github.com/tartiflette/tartiflette).
+The `tartiflette-plugin-isodatenow` plugin adds an `@isoDateNow` directive to [tartiflette](https://github.com/tartiflette/tartiflette).  It sets the field that it is on with the current time in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601).
+It is primarly intended for use in mutations as the directive overrides any value sent though it can be used in queries where a `createdAt` or response timestamp is required.
 
 ## [Installation](#install)
 
@@ -38,7 +39,7 @@ $ pip install tartiflette-plugin-isodate
 
 ```graphql
 type Example {
-    createdAt: String @isoDate
+    createdAt: String @isoDateNow
 }
 ```
 
@@ -57,15 +58,15 @@ Querying `createdAt` would return the following:
 
 ### [Options](#usage-options)
 
-The `@isoDate` also takes the following optional arguments:
+The `@isoDateNow` also takes the following optional arguments:
 
-#### [@isoDate(microseconds: false)](#usage-options-microseconds)
+#### [@isoDateNow(microseconds: false)](#usage-options-microseconds)
 
 Returns date and time _without_ microseconds.
 
 ```graphql
 type Example {
-    createdAt: String @isoDate(microseconds: false)
+    createdAt: String @isoDateNow(microseconds: false)
 }
 ```
 
@@ -81,13 +82,13 @@ Querying `createdAt` would return the following:
 }
 ```
 
-#### [@isoDate(timezone: false)](#usage-options-timezone)
+#### [@isoDateNow(timezone: false)](#usage-options-timezone)
 
 Returns date and time _without_ timezone.
 
 ```graphql
 type Example {
-    createdAt: String @isoDate(timezone: false)
+    createdAt: String @isoDateNow(timezone: false)
 }
 ```
 
@@ -103,13 +104,13 @@ Querying `createdAt` would return the following:
 }
 ```
 
-#### [@isoDate(utc: false)](#usage-options-utc)
+#### [@isoDateNow(utc: false)](#usage-options-utc)
 
 Returns date and time in the _local_ timezone.
 
 ```graphql
 type Example {
-    createdAt: String @isoDate(utc: false)
+    createdAt: String @isoDateNow(utc: false)
 }
 ```
 
@@ -132,13 +133,13 @@ For example settings `microseconds` to `false` and `timezone` to `true` would yi
 
 Possible combinations:
 
-- `@isoDate` >> "2019-09-04T13:49:12.585158+00:00"
-- `@isoDate(timezone: false)` >> "2019-09-04T13:52:43.476260"
-- `@isoDate(microseconds: false)` >> "2019-09-04T13:50:02+00:00"
-- `@isoDate(microseconds: false, timezone: false)` >> "2019-09-04T13:53:31"
+- `@isoDateNow` >> "2019-09-04T13:49:12.585158+00:00"
+- `@isoDateNow(timezone: false)` >> "2019-09-04T13:52:43.476260"
+- `@isoDateNow(microseconds: false)` >> "2019-09-04T13:50:02+00:00"
+- `@isoDateNow(microseconds: false, timezone: false)` >> "2019-09-04T13:53:31"
 
 The time can also be set to the `local` time by setting `utc` to `false`.  
 
-`@isoDate(utc: false)` >> "2019-09-04T09:50:02+00:00"
+`@isoDateNow(utc: false)` >> "2019-09-04T09:50:02+00:00"
 
-Using the `@isoDate` directive will override any value sent.
+Using the `@isoDateNow` directive will override any value sent.

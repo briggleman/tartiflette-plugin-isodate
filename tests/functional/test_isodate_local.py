@@ -10,7 +10,7 @@ from tartiflette import Resolver, create_engine
 
 @pytest.fixture
 def mock_time_altzone(autouse=True):
-    with patch("tartiflette_plugin_isodate.time") as mocked:
+    with patch("tartiflette_plugin_isodatenow.time") as mocked:
         mocked.altzone = 14400
         yield mocked
 
@@ -33,7 +33,7 @@ async def test_isodate_defaults(mock_time_altzone):
     engine = await create_engine(
         sdl="""
         type ISODate {
-            date: String @isoDate(utc: false)
+            date: String @isoDateNow(utc: false)
         }
         type Query {
             createdAt: ISODate
@@ -41,7 +41,7 @@ async def test_isodate_defaults(mock_time_altzone):
         """,
         modules=[
             {
-                "name": "tartiflette_plugin_isodate",
+                "name": "tartiflette_plugin_isodatenow",
                 "config": {}
             }
         ],
@@ -71,7 +71,7 @@ async def test_isodate_no_microseconds(mock_time_altzone):
     engine = await create_engine(
         sdl="""
         type ISODate {
-            date: String @isoDate(microseconds: false, utc: false)
+            date: String @isoDateNow(microseconds: false, utc: false)
         }
         type Query {
             createdAt: ISODate
@@ -79,7 +79,7 @@ async def test_isodate_no_microseconds(mock_time_altzone):
         """,
         modules=[
             {
-                "name": "tartiflette_plugin_isodate",
+                "name": "tartiflette_plugin_isodatenow",
                 "config": {},
             }
         ],
@@ -109,7 +109,7 @@ async def test_isodate_no_timezone():
     engine = await create_engine(
         sdl="""
         type ISODate {
-            date: String @isoDate(timezone: false, utc: false)
+            date: String @isoDateNow(timezone: false, utc: false)
         }
         type Query {
             createdAt: ISODate
@@ -117,7 +117,7 @@ async def test_isodate_no_timezone():
         """,
         modules=[
             {
-                "name": "tartiflette_plugin_isodate",
+                "name": "tartiflette_plugin_isodatenow",
                 "config": {}
             }
         ],
@@ -147,7 +147,7 @@ async def test_isodate_no_microseconds_timezone():
     engine = await create_engine(
         sdl="""
         type ISODate {
-            date: String @isoDate(microseconds: false, timezone: false, utc: false)
+            date: String @isoDateNow(microseconds: false, timezone: false, utc: false)
         }
         type Query {
             createdAt: ISODate
@@ -155,7 +155,7 @@ async def test_isodate_no_microseconds_timezone():
         """,
         modules=[
             {
-                "name": "tartiflette_plugin_isodate",
+                "name": "tartiflette_plugin_isodatenow",
                 "config": {},
             }
         ],
