@@ -15,7 +15,7 @@ _TEST_REQUIRE = [
     "freezegun==0.3.12",
 ]
 
-_VERSION = "0.2.2"
+_VERSION = "1.0.0"
 
 _PACKAGES = find_packages(exclude=["tests*"])
 
@@ -43,7 +43,7 @@ setup(
     ],
     keywords="api graphql protocol api tartiflette iso8601 date datetime directive",
     packages=_PACKAGES,
-    install_requires=["tartiflette>=0.12.5"],
+    install_requires=["tartiflette>=1.0.0"],
     tests_require=_TEST_REQUIRE,
     extras_require={"test": _TEST_REQUIRE},
     include_package_data=True,
